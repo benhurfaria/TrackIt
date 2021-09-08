@@ -1,17 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import styled from "styled-components";
+import Login from "./Components/Login";
+import "./Estilos/reset.css"
+function App(){
+  return(
+    <Body>
+      <BrowserRouter>
+        <Switch>
+          
+          <Route path="/" exact>
+            <Login/>
+          </Route>
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+        </Switch>
+      
+      </BrowserRouter>
+    
+    
+    
+    </Body>
+
+  );
+}
+const Body = styled.div`
+    background-color: #E5E5E5;
+    width: 100vw;
+    height: 100vh;
+`;
+ReactDOM.render(<App/>, document.querySelector(".root"));
