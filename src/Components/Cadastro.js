@@ -1,31 +1,30 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default function Login(){
-    return (
-        <TelaLogin> 
-            <img src="/assets/logo.png"/>
+export default function Cadastro(){
+    return(
+        <TelaCadastro>
+            <img src="/assets/logo.png"></img>
             <input type="text" placeholder="email"/>
             <input type="password" placeholder="senha"/>
-            <div class="entrar">Entrar</div>
-            <Link to="/cadastro" class="enfeite">
-                <div class="cadastro">Não tem uma conta? Cadastre-se!</div>
+            <input type="text" placeholder="nome"/>
+            <input type="text" placeholder="foto"/>
+            <div class="Cadastre">Cadastrar</div>
+            <Link to="/" class="enfeite">
+                <div class="feito">Já tem uma conta? Faça o login!</div>
             </Link>
-        </TelaLogin>
+        </TelaCadastro>
     );
 }
-const TelaLogin = styled.div`
+const TelaCadastro = styled.div`
     font-family: 'Lexend Deca' , sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    .enfeite{
-        text-decoration: none;
-    }
-    p{
-        font-size: 69px;
-        color: #126BA5;
+    flex-direction: column;
+    img{
+        margin-top:100px;
+        margin-bottom: 10px;
     }
     input{
         outline: none;
@@ -38,27 +37,26 @@ const TelaLogin = styled.div`
         font-size: 20px;
         margin-top: 10px;
     }
+    .feito{
+        margin-top:10px;
+        color: #52B6FF;
+        font-size: 14px;
+    }
+    .enfeite{
+        text-decoration: none;
+    }
     input::placeholder{
         color: #DBDBDB;
     }
-    img{
-        margin-top: 100px;
-        margin-bottom: 30px;
-    }
-    .entrar{
+    .Cadastre{
         width: 290px;
         height: 45px;
         background-color: #52B6FF;
-        margin-top: 30px;
+        margin-top: 20px;
         color: #FFFFFF;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 21px;
-    }
-    .cadastro{
-        margin-top:10px;
-        color: #52B6FF;
-        font-size: 14px;
     }
 `;
